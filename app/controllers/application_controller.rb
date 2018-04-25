@@ -26,7 +26,7 @@ class ApplicationController < Sinatra::Base
 
   get '/login' do
     if logged_in?
-      redirect '/users/tweets'
+      redirect "/<%= current_user.slug %>/tweets"
     else
       erb :login
     end
@@ -37,6 +37,10 @@ class ApplicationController < Sinatra::Base
     session[:id] = @user.id
 
     erb :'users/tweets'
+  end
+
+  get '/:slug' do
+    @user = 
   end
 
   get '/logout' do
