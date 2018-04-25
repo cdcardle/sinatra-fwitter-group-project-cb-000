@@ -15,11 +15,13 @@ class ApplicationController < Sinatra::Base
     erb :signup
   end
 
-  def current_user(session_hash)
-    User.find(session_hash[:user_id])
-  end
+  helpers do
+    def current_user(session_hash)
+      User.find(session_hash[:user_id])
+    end
 
-  def logged_in?
-    !!session[:user_id]
+    def logged_in?
+      !!session[:user_id]
+    end
   end
 end
