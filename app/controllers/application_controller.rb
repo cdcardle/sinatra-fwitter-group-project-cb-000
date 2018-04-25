@@ -18,17 +18,20 @@ class ApplicationController < Sinatra::Base
   post '/signup' do
     puts params
     @user = User.create(params)
-    erb :'users/index'
+    erb :'users/tweets'
   end
 
   get '/login' do
-    erb :login
+    if logged_in?
+      redirect to '/users/tweets'
+    else
+      erb :login
   end
 
   post '/login' do
     @user = User.find_by(username: params[:username], password: params[:password])
 
-    erb :'users/index'
+    erb :'users/tweets'
   end
 
   helpers do
