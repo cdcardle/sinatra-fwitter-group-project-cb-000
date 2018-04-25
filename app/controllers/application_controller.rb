@@ -16,6 +16,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/signup' do
+    @user = User.create(params)
     erb :'/users/index'
   end
 
