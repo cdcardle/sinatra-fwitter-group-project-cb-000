@@ -39,7 +39,7 @@ class ApplicationController < Sinatra::Base
     erb :'users/tweets'
   end
 
-  get 'logout' do
+  get '/logout' do
     session.clear
     redirect '/'
   end
