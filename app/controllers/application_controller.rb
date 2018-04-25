@@ -19,12 +19,12 @@ class ApplicationController < Sinatra::Base
     @user = User.create(params)
     session[:id] = @user.id
 
-    redirect to 'users/tweets'
+    redirect 'users/tweets'
   end
 
   get '/login' do
     if logged_in?
-      redirect to '/users/tweets'
+      redirect '/users/tweets'
     else
       erb :login
     end
