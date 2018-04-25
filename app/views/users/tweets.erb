@@ -3,6 +3,6 @@
 <h4><%= @user.username %>'s tweets:'</h4>
 <ul>
   <% @user.tweets.each do |tweet| %>
-    <li><%= tweet.id %>: <%= tweet.content %></li>
+    <li>#<%= tweet.id %>: <%= tweet.content %></li>
   <% end %>
 </ul>
