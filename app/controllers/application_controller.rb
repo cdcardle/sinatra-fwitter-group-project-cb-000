@@ -40,6 +40,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/:slug' do
+    @user = User.find_by_slug(params[:slug])
     erb :index
   end
 
