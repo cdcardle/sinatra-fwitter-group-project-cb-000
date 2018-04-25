@@ -21,7 +21,7 @@ class ApplicationController < Sinatra::Base
     @user = User.create(params)
     session[:id] = @user.id
 
-    redirect 'users/tweets'
+    redirect "<%= current_user.slug %>/tweets"
   end
 
   get '/login' do
