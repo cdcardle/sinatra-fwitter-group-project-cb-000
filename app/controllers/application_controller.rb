@@ -18,7 +18,16 @@ class ApplicationController < Sinatra::Base
   post '/signup' do
     puts params
     @user = User.create(params)
-    erb :'/users/index'
+    erb :'users/index'
+  end
+
+  get '/login' do
+    erb :login
+  end
+
+  post '/login' do
+    @user = User.find(params[:id])
+    erb :'users/login'
   end
 
   helpers do
