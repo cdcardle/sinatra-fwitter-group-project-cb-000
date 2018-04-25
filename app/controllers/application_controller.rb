@@ -18,7 +18,8 @@ class ApplicationController < Sinatra::Base
   post '/signup' do
     puts params
     @user = User.create(params)
-    erb :'users/tweets'
+    
+    redirect to 'users/tweets'
   end
 
   get '/login' do
