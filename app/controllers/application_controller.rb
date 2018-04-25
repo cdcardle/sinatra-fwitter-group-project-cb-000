@@ -40,7 +40,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/:slug' do
-
+    erb :index
   end
 
   get '/logout' do
