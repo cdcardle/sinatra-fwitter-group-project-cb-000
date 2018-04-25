@@ -41,7 +41,7 @@ class ApplicationController < Sinatra::Base
 
   get '/:slug' do
     @user = User.find_by_slug(params[:slug])
-    
+
   end
 
   get '/logout' do
