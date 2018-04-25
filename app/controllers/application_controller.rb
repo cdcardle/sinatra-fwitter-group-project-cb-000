@@ -35,6 +35,10 @@ class ApplicationController < Sinatra::Base
     erb :'users/tweets'
   end
 
+  get 'logout' do
+    session.clear
+  end
+
   helpers do
     def current_user(session_hash)
       User.find(session_hash[:user_id])
